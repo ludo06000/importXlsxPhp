@@ -6,19 +6,18 @@
     $serveur = 'localhost';
 
     $connection = mysqli_connect($serveur,$user,$password,$db);
-    require 'vendor/autoload.php';
+   
 
     use PhpOffice\PhpSpreadsheet\Spreadsheet;
     use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
     if(isset($_POST['submitBtn']))
     {
-        // SQL query
-        $sql = "SHOW TABLES IN `test` WHERE `Tables_in_test` = 'products'";
 
-        // perform the query and store the result
-        $result = $connection->query($sql);
-        $table = $result->num_rows;
+        
+        
+        
+        
 
         if ($table < 1) 
         {
