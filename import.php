@@ -4,6 +4,7 @@
     $user = 'root';
     $password = 'root';
     $serveur = 'localhost';
+    $tabledb = 'products';
 
     $connection = mysqli_connect($serveur,$user,$password,$db);
    
@@ -13,6 +14,8 @@
 
     if(isset($_POST['submitBtn']))
     {
+        // SQL query
+        $sql = "SHOW TABLES IN `".$db."` WHERE `Tables_in_".$db."` = '".$tabledb."'";
 
         
         
@@ -34,7 +37,7 @@
             if (!$connection->query($sql)) {
                 echo "Error creating table: ". $connection->error;
             } else { 
-                echo "Table Product created successfully.";
+                echo "Table ".$tabledb." created successfully.";
             }
 
         }
